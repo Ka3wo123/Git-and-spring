@@ -1,0 +1,6 @@
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:1090/moviesdb
+    username: postgres
+    password: password
+    pool-size: 30
