@@ -61,6 +61,17 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>9.7.0</version>
+				<configuration>
+					<url>jdbc:postgresql://localhost:1090/moviesdb</url>
+					<user>postgres</user>
+					<password>password</password>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
