@@ -1,22 +1,37 @@
 package pl.kajtek.springbootdockergit.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
+import jakarta.persistence.*;
+import lombok.*;
 
+@Entity
+@Table(name = "directors")
+@Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Director {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id",
+            nullable = false,
+            updatable = false,
+            columnDefinition = "BIGINT")
     private Long id;
+
+    @Column(name = "first_name",
+            nullable = false,
+            columnDefinition = "TEXT")
     private String name;
+
+    @Column(name = "last_name",
+            nullable = false,
+            columnDefinition = "TEXT")
     private String surname;
+
+    @Column(name = "movies_id",
+            nullable = false,
+            columnDefinition = "BIGINT")
     private Long otherMoviesFK;
 
-    public Director(@JsonProperty Long id,
-                    @JsonProperty String name,
-                    @JsonProperty String surname,
-                    @JsonProperty Long otherMoviesFK) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.otherMoviesFK = otherMoviesFK;
-    }
 }

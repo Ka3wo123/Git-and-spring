@@ -1,4 +1,4 @@
-package pl.kajtek.springbootdockergit;
+package pl.kajtek.springbootdockergit.exceptions;
 
 public class MovieNotFoundException extends Exception {
     public MovieNotFoundException(String message) {
